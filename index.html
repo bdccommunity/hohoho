@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+
+.wrapper {
+width: 800px;
+margin: 30px auto;
+text-align:center;
+}
+
+
+input[type=text] {
+padding: 6px 12px;
+font-size: 16px;
+font-weight: 400;
+line-height: 1.5;
+color: #212529;
+background-color: #fff;
+background-clip: padding-box;
+border: 1px solid #ced4da;
+appearance: none;
+border-radius: 4px;
+transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+input[type=text]:focus {
+color: #212529;
+background-color: #fff;
+border-color: #86b7fe;
+outline: 0;
+box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+
+img{
+  width: 400px;
+  height: 150px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+<img src='Santa-s-Nice-List-12-18-2023.jpg' >
+<br><br><br>
+
+<input type="text" id="myInput" value="" placeholder="Enter your name here"	>
+
+<p><span id="demo2"></span></p>
+<p><b><span id="seconds"></span></b></p>
+<div id="demo"></div>
+<br><br><br>
+<div id="attribution"></div>
+</div>
+<script>
+
+
+var output = document.getElementById("demo");
+var output2 = document.getElementById("demo2");
+var attribution = document.getElementById("attribution");
+var input = document.getElementById("myInput");
+
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+
+	output2.innerHTML = "result shown in ";
+	output.innerHTML = "";
+	attribution.innerHTML = "";
+
+	const $ = selector => document.querySelector(selector); 
+
+	let timer = null;
+	let counter = 11;
+	let x = 0;
+
+	const goToTerms = () => { 
+
+		counter--;
+		if (counter == 0) {
+	
+		if (x == 0) {
+			myFunction();
+		}
+		else{
+		clearInterval( timer );
+		$("#seconds").textContent = "";
+	
+		output.innerHTML = "";
+		output2.innerHTML = "";
+	
+		if (this.value.toLowerCase() == 'clare') {
+		greeting = "<img src='c.gif' >";
+		} else if (this.value.toLowerCase() == 'nandar') {
+		greeting = "<img src='n.gif' >";
+		} else if (this.value.toLowerCase() == 'joan') {
+		greeting = "<img src='j.gif' >";
+		} else {
+		greeting = "name not in list";
+		}
+		output.innerHTML = greeting;
+		attribution.innerHTML = "fonts courtesy of www.textstudio.com";
+  
+		}
+    } else {
+        $("#seconds").textContent = counter; // update number of seconds
+    }
+};
+
+    /*********************************************************************
+     * start timer and attach cancel timer click event to cancel button  *
+     *********************************************************************/
+    const i = window.location.href.indexOf("accepted");  // look for querystring from terms.html url  
+  if (i == -1) {  // user hasn't accepted terms (indexOf() returns -1 when search string not found)
+        timer  = setInterval( goToTerms, 1000 );
+
+    } 
+	
+	
+function myFunction() {
+x = 1;
+counter = 11;
+alert("Hmmm..., click 'OK' to let me check again");
+
+}	
+    
+  }
+});
+</script>
+
+</body>
+</html>
