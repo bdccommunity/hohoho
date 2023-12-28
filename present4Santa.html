@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>
+
+body { font-family: sans-serif; }
+
+div {
+  text-align: center;
+}
+
+
+span {
+
+  color: white;
+  padding: 1.5rem;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+
+
+span.gentle-tilt-move-shake:hover {
+  animation: tilt-n-move-shaking 0.25s infinite;
+}
+
+
+
+
+@keyframes tilt-n-move-shaking {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(5px, 5px) rotate(5deg); }
+  50% { transform: translate(0, 0) rotate(0eg); }
+  75% { transform: translate(-5px, 5px) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+
+
+</style>
+
+
+</head>
+<body>
+
+
+
+<div>
+  <span class="gentle-tilt-move-shake"><a href="alive.html"><img src="present.png" width="100" height="50"></a></span>
+</div>
+
+
+</body>
+</html>
